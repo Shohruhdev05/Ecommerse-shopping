@@ -20,103 +20,21 @@
                       <p class="mb-0">You have 4 items in your cart</p>
                     </div>
                     <div>
-                      <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
-                                                                                  class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
+                      <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
                     </div>
                   </div>
 
                   <div class="card mb-3">
-                    <div class="card-body">
+                    <div class="card-body" v-for="product in cart" :key="product.id">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex flex-row align-items-center">
                           <div>
                             <img
-                                src="../../../../images/chair-1.svg"
+                                :src="product?.image"
                                 class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
                           </div>
                           <div class="ms-3">
-                            <h5>Try Table</h5>
-                            <p class="small mb-0">Color: Black</p>
-                          </div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center">
-                          <div style="width: 50px;">
-                            <h5 class="fw-normal mb-0">2</h5>
-                          </div>
-                          <div style="width: 80px;">
-                            <h5 class="mb-0">$19.99</h5>
-                          </div>
-                          <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <div class="d-flex flex-row align-items-center">
-                          <div>
-                            <img
-                                src="../../../../images/scroll-carousel-img-3.jpg"
-                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                          </div>
-                          <div class="ms-3">
-                            <h5>Beige Table Lamp</h5>
-                            <p class="small mb-0">Color: Gold</p>
-                          </div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center">
-                          <div style="width: 50px;">
-                            <h5 class="fw-normal mb-0">2</h5>
-                          </div>
-                          <div style="width: 80px;">
-                            <h5 class="mb-0">$24.99</h5>
-                          </div>
-                          <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <div class="d-flex flex-row align-items-center">
-                          <div>
-                            <img
-                                src="../../../../images/scroll-carousel-img-5.jpg"
-                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                          </div>
-                          <div class="ms-3">
-                            <h5>White Drawer unit</h5>
-                            <p class="small mb-0">Color: White</p>
-                          </div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center">
-                          <div style="width: 50px;">
-                            <h5 class="fw-normal mb-0">1</h5>
-                          </div>
-                          <div style="width: 80px;">
-                            <h5 class="mb-0">$89.99</h5>
-                          </div>
-                          <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card mb-3 mb-lg-0">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <div class="d-flex flex-row align-items-center">
-                          <div>
-                            <img
-                                src="../../../../images/scroll-carousel-img-11.jpg"
-                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                          </div>
-                          <div class="ms-3">
-                            <h5>Black Brow Side table</h5>
+                            <h5>{{product.name_uz}}</h5>
                             <p class="small mb-0">Color: Black</p>
                           </div>
                         </div>
@@ -125,13 +43,16 @@
                             <h5 class="fw-normal mb-0">1</h5>
                           </div>
                           <div style="width: 80px;">
-                            <h5 class="mb-0">$19.00</h5>
+                            <h5 class="mb-0">${{product.price}}</h5>
                           </div>
                           <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
+
+
+
 
                 </div>
                 <div class="col-lg-5">
@@ -145,40 +66,46 @@
                       </div>
 
                       <p class="small mb-2">Card type</p>
-                      <a href="#!" type="submit" class="text-white"><i
+                      <a href="#" type="submit" class="text-white"><i
                           class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i
+                      <a href="#" type="submit" class="text-white"><i
                           class="fab fa-cc-visa fa-2x me-2"></i></a>
                       <a href="#!" type="submit" class="text-white"><i
                           class="fab fa-cc-amex fa-2x me-2"></i></a>
                       <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
 
-                      <form class="mt-4">
-                        <div data-mdb-input-init class="form-outline form-white mb-4">
-                          <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                                 placeholder="Cardholder's Name" />
-                          <label class="form-label" for="typeName">Cardholder's Name</label>
-                        </div>
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div data-mdb-input-init class="form-outline form-white mb-4">
+                              <input type="text" id="region" class="form-control form-control-lg" size="17"
+                                     placeholder="Tashkent" v-model="region" />
+                              <label class="form-label" for="region">Region</label>
+                            </div>
+                          </div>
 
-                        <div data-mdb-input-init class="form-outline form-white mb-4">
-                          <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                                 placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
-                          <label class="form-label" for="typeText">Card Number</label>
+                          <div class="col-md-6">
+                            <div data-mdb-input-init class="form-outline form-white mb-4">
+                              <input type="text" id="typeText" class="form-control form-control-lg" size="17"
+                                     placeholder="Chilonzor" minlength="19" maxlength="19" v-model="district" />
+                              <label class="form-label" for="typeText">District</label>
+                            </div>
+                          </div>
                         </div>
 
                         <div class="row mb-4">
                           <div class="col-md-6">
                             <div data-mdb-input-init class="form-outline form-white">
                               <input type="text" id="typeExp" class="form-control form-control-lg"
-                                     placeholder="MM/YYYY" size="7" minlength="7" maxlength="7" />
-                              <label class="form-label" for="typeExp">Expiration</label>
+                                     placeholder="Katartal"  v-model="street" />
+                              <label class="form-label" for="typeExp">Street</label>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div data-mdb-input-init class="form-outline form-white">
-                              <input type="password" id="typeText" class="form-control form-control-lg"
-                                     placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-                              <label class="form-label" for="typeText">Cvv</label>
+                              <input type="text" id="typeText" class="form-control form-control-lg"
+                                     placeholder="28-home" size="1"  v-model="home" />
+                              <label class="form-label" for="typeText">Home</label>
                             </div>
                           </div>
                         </div>
@@ -202,9 +129,8 @@
                         <p class="mb-2">$4818.00</p>
                       </div>
 
-                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg">
+                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" @click="checkout">
                         <div class="d-flex justify-content-between">
-                          <span>$4818.00</span>
                           <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                         </div>
                       </button>
@@ -225,8 +151,57 @@
 </template>
 
 <script setup>
-
 import NavbarComponent from "@/components/NavbarComponent.vue";
+import {ref, onMounted} from "vue";
+import axios from "axios";
+
+const region = ref('')
+const district = ref('')
+const street = ref('')
+const home = ref('')
+const yourToken = '1|5lo6yKLJYTgxNs2SJs66LNRXSTuwQMIhYeBtcgJlafec3d35'
+
+
+const checkout = function (){
+  axios({
+    method: 'POST',
+    url: 'http://127.0.0.1:8000/api/orders',
+    data: {
+      longitude: '8359486346',
+      latitude: '892357045',
+      region: region.value,
+      district: district.value,
+      street: street.value,
+      home: home.value,
+      products: cart.value.map(product => ({
+        id: product.id,
+        quantity: 1
+      })),
+      payment_method: 'credit_card',
+      shipping_method: 'standard'
+    },
+    headers:{
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${yourToken}`
+    }
+  }).then((response) => {
+    console.log(response.data.message)
+    alert('Muvaffaqqiyatli savdo qildingiz')
+  }).catch((error)=>{
+    console.log(error.response.data.message)
+    alert('ketmadi')
+  })
+}
+
+
+  const cart = ref([]);
+
+  onMounted(() => {
+    cart.value = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(cart.value)
+  });
+
 </script>
 
 <style scoped>

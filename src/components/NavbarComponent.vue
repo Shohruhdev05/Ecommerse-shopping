@@ -9,10 +9,8 @@
             <button @click="w3_close()" class="btn w3-large" style="justify-content: flex-end">&times;</button>
             <router-link to="/" class="navbar-link w3-bar-item w3-button">Home</router-link>
             <router-link to="/shop" class="navbar-link w3-bar-item w3-button">Shop</router-link>
-            <router-link to="/product" class="navbar-link w3-bar-item w3-button">Product</router-link>
             <router-link to="/contact-us" class="navbar-link w3-bar-item w3-button">Contact Us</router-link>
           </div>
-        <!-- Page Content -->
           <div>
             <button class="btn  sidebar-button" @click="w3_open()">☰</button>
           </div>
@@ -24,7 +22,6 @@
       <div class="col-md-6 navbar-links">
         <router-link to="/" class="navbar-link link">Home</router-link>
         <router-link to="/shop" class="navbar-link link">Shop</router-link>
-        <router-link to="/product" class="navbar-link link">Product</router-link>
         <router-link to="/contact-us" class="navbar-link link">Contact Us</router-link>
       </div>
       <div class="col-md-4 icon-links">
@@ -33,7 +30,6 @@
         <router-link class="shopping-link" to="/add-to-card"><i class="bi bi-cart2"></i></router-link>
       </div>
     </div>
-    <span class="shopping-link-count">1</span>
   </div>
 </nav>
 </template>
