@@ -8,7 +8,6 @@
       <div class="col-md-6 navbar-links mt-5">
         <router-link to="/" class="navbar-link">Home</router-link>
         <router-link to="/shop" class="navbar-link">Shop</router-link>
-        <router-link to="/product" class="navbar-link">Product</router-link>
         <router-link to="/contact-us" class="navbar-link">Contact Us</router-link>
       </div>
     </div>

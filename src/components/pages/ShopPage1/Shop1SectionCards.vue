@@ -51,7 +51,7 @@
             <img src="../../../../images/Star Icon.jpg" height="16" width="16"/>
           </p>
           <router-link :to="{name:'product', params:{id:item.id}}" style="text-decoration: none">
-            <p style="margin: 0; font-weight: 700; font-size: 18px">{{ item.name_uz }}</p>
+            <p class="link_product">{{ item.name_uz }}</p>
           </router-link>
           <p><b>${{ item.price }}</b></p>
       </div>
@@ -65,17 +65,19 @@
 </div>
 </template>
 <script setup>
+import "toastify-js/src/toastify.css"
 import { ref, onMounted } from 'vue';
 import axios from "axios";
-
-
+import {showToast, errorToast} from "@/components/pages/ToastifySuccess.js";
+const count = ref(0)
 const url = "http://127.0.0.1:8000/api"
 const yourToken = '1|5lo6yKLJYTgxNs2SJs66LNRXSTuwQMIhYeBtcgJlafec3d35'
 const addToCard = function (product){
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
-  console.log(localStorage.getItem('cart'));
+  // console.log(localStorage.getItem('cart'));
+
   axios({
     method: 'POST',
     url: url + '/carts',
@@ -89,9 +91,10 @@ const addToCard = function (product){
     }
   }).then((response) => {
     console.log(response.data.message);
-    alert('Muvaffaqqiyatli yuborildi')
+    showToast();
   }).catch((error) => {
-    alert(error.response.data.message)
+    console.log(error.response.data.message);
+    errorToast();
   })
 }
 
@@ -106,6 +109,8 @@ const fetchData = async () => {
     items.value = response.data.data;
 };
 onMounted(fetchData);
+
+
 </script>
 
 
@@ -164,6 +169,15 @@ onMounted(fetchData);
   width: 80%;
   font-weight: 600;
   font-size: 18px;
+}
+.link_product{
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px
+}
+.link_product:hover{
+  color: #377DFF !important;
+  font-size: 19px;
 }
 
 </style>

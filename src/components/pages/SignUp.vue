@@ -49,7 +49,7 @@ const first_name = ref('')
 const last_name = ref('')
 const phone_number = ref('')
 const password = ref('')
-
+const token = ref('')
 
 const register = function (){
   axios({
@@ -66,6 +66,8 @@ const register = function (){
       'Content-Type': 'application/json'
     }
   }).then((response) => {
+    console.log(response);
+    token.value = response.data.token;
     router.push('/')
     Toastify({
       text: "Xush kelibsiz!",
@@ -79,7 +81,6 @@ const register = function (){
       stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, green, lightgreen)",
-        width:"30%",
         color:"white",
         borderRadius:"10px",
       }

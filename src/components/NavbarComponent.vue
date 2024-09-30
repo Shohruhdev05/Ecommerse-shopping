@@ -10,6 +10,7 @@
             <router-link to="/" class="navbar-link w3-bar-item w3-button">Home</router-link>
             <router-link to="/shop" class="navbar-link w3-bar-item w3-button">Shop</router-link>
             <router-link to="/contact-us" class="navbar-link w3-bar-item w3-button">Contact Us</router-link>
+            <router-link to="/my-account" class="navbar-link w3-bar-item w3-button"><i class="bi bi-person-circle"></i></router-link>
           </div>
           <div>
             <button class="btn  sidebar-button" @click="w3_open()">☰</button>
@@ -19,21 +20,24 @@
       <div class="col-md-2 legant-logo">
         <img src="../../../images/logo-legant.svg"/>
       </div>
-      <div class="col-md-6 navbar-links">
+      <div class="col-md-5 navbar-links">
         <router-link to="/" class="navbar-link link">Home</router-link>
         <router-link to="/shop" class="navbar-link link">Shop</router-link>
         <router-link to="/contact-us" class="navbar-link link">Contact Us</router-link>
       </div>
-      <div class="col-md-4 icon-links">
+      <div class="col-md-5 icon-links">
         <router-link class="search-link"><i class="bi bi-search"></i></router-link>
-        <router-link class="profile-link"><i class="bi bi-person-circle"></i></router-link>
-        <router-link class="shopping-link" to="/add-to-card"><i class="bi bi-cart2"></i></router-link>
+        <router-link class="profile-link" to="/my-account"><i class="bi bi-person-circle"></i></router-link>
+        <router-link class="shopping-link" to="/add-to-card"><i class="bi bi-cart2"></i><span class="count">{{count}}</span></router-link>
       </div>
+
     </div>
   </div>
 </nav>
 </template>
 <script setup>
+import {ref} from "vue";
+
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
 }
@@ -41,6 +45,10 @@ function w3_open() {
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
+
+
+
+
 </script>
 
 
@@ -95,6 +103,7 @@ nav{
 }
 .shopping-link{
   position: relative;
+  text-decoration: none;
 }
 .shopping-link-count{
   position: absolute;
@@ -108,6 +117,7 @@ nav{
   align-items: center;
   text-align: center;
 }
+
 @media screen and (max-width: 991px) {
   .navbar-links, .search-link, .profile-link{
     display: none;

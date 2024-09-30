@@ -6,20 +6,20 @@
     </div>
    <div class="col-md-4 more-product">
      <div>
-       <p><router-link to="" class="more-product-link">More Products <img src="../../images/arrow-right.jpg" alt=""></router-link></p>
+       <p><router-link to="/shop" class="more-product-link">More Products <img src="../../images/arrow-right.jpg" alt=""></router-link></p>
      </div>
    </div>
   </div>
   <div class="row">
     <div id="carousel">
-      <div class="item">
+      <div class="item" v-for="item of items" :key="item.id">
         <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-1.jpg" alt="Card image" style="width:100%">
+          <img class="card-img-top" :src="item?.image" alt="Card image" style="width:100%">
           <div class="card-img-overlay">
             <h4 class="condition">NEW</h4>
             <h5 class="discount">-50%</h5>
             <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
+              <button class="btn btn-dark card-buttons" @click="addToCard(item)">Add to card</button>
             </div>
           </div>
         </div>
@@ -31,261 +31,10 @@
             <img src="../../images/Star Icon.jpg" height="16" width="16"/>
             <img src="../../images/Star Icon.jpg" height="16" width="16"/>
           </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Loveseat Sofa</p>
-          <p><b>$199.00</b><del style="padding: 0 10px; color: #6C7275">$400.00</del></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carusel-img-2.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Table Lamp</p>
-          <p><b>$24.99</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-3.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Beige Table Lamp</p>
-          <p><b>$24.99</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-4.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Bamboo basket</p>
-          <p><b>$24.99</b><</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-5.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">White Drawer unit</p>
-          <p><b>$89.99</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-6.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Black Tray table</p>
-          <p><b>$19.99</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-7.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Lamp</p>
-          <p><b>$39.00</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-8.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Light Beige Pillow</p>
-          <p><b>$3.99</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-9.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Luxury Sofa</p>
-          <p><b>$299.00</b><del style="padding: 0 10px; color: #6C7275">$500.00</del></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-10.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">LCozy Sofa</p>
-          <p><b>$299.00</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-11.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Black Brow Side table</p>
-          <p><b>$19.00</b></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="card img-fluid">
-          <img class="card-img-top" src="../../images/scroll-carousel-img-12.jpg" alt="Card image" style="width:100%">
-          <div class="card-img-overlay">
-            <h4 class="condition">NEW</h4>
-            <h5 class="discount">-50%</h5>
-            <div class="card-button">
-              <button class="btn btn-dark card-buttons">Add to card</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p style="margin: 0">
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-            <img src="../../images/Star Icon.jpg" height="16" width="16"/>
-          </p>
-          <p style="margin: 0; font-weight: 700; font-size: 18px">Off-white Pillow</p>
-          <p><b>$7.99</b></p>
+          <router-link :to="{name:'product', params:{id:item.id}}" style="text-decoration: none">
+            <p class="link_product">{{ item.name_uz }}</p>
+          </router-link>
+          <p><b>${{item.price}}</b></p>
         </div>
       </div>
     </div>
@@ -293,7 +42,44 @@
 </div>
 </template>
 <script setup>
+import axios from "axios";
+import {onMounted, ref} from "vue";
+import {errorToast, showToast} from "@/components/pages/ToastifySuccess.js";
 
+const url = "http://127.0.0.1:8000/api"
+const yourToken = '1|5lo6yKLJYTgxNs2SJs66LNRXSTuwQMIhYeBtcgJlafec3d35'
+const addToCard = function (product){
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  console.log(localStorage.getItem('cart'));
+  axios({
+    method: 'POST',
+    url: url + '/carts',
+    data:{
+      "product_id": product.id,
+    },
+    headers:{
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${yourToken}`
+    }
+  }).then((response) => {
+    console.log(response.data.message);
+    showToast()
+  }).catch((error) => {
+    console.log(error.response.data.message)
+    errorToast()
+  })
+}
+const items = ref([]);
+
+
+const fetchData = async () => {
+  const response = await axios.get('http://127.0.0.1:8000/api/product');
+  items.value = response.data.data;
+};
+onMounted(fetchData);
 </script>
 
 
@@ -369,6 +155,15 @@
 }
 .card:hover .card-buttons{
   display: block;
+}
+.link_product{
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px
+}
+.link_product:hover{
+  color: #377DFF !important;
+  font-size: 19px;
 }
 @media screen and (max-width: 991px){
   .more-product-link{

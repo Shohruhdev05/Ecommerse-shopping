@@ -5,6 +5,7 @@
   <Shop1SectionCards/>
   <FooterEmailComponent/>
   <FooterComponent/>
+  <router-view/>
 </template>
 <script setup>
 

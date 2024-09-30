@@ -44,13 +44,14 @@
   import router from "@/router/index.js";
   import Toastify from 'toastify-js'
 
+
   const phone_number = ref('')
   const password = ref('')
-
+  const token = ref('')
   const login = function (){
     axios({
       method: 'POST',
-      url: 'http://127.0.0.1:8000/api/login',
+        url: 'http://127.0.0.1:8000/api/login',
       data:{
         phone_number:phone_number.value,
         password:password.value
@@ -60,6 +61,9 @@
         'Content-Type': 'application/json'
       }
     }).then((response) => {
+      console.log(response);
+       token.value = response.data.token
+
       router.push('/')
       Toastify({
         text: "Xush kelibsiz!",
@@ -73,15 +77,15 @@
         stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, green, lightgreen)",
-          width:"30%",
           color:"white",
-          borderRadius:"10px",
+          borderRadius:"",
         }
       }).showToast();
     }).catch((error) => {
       alert(error.response.data.message)
     })
   }
+
 
 </script>
 

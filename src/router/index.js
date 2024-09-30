@@ -26,6 +26,7 @@ import ContactUsMap from "@/components/pages/ContactUsPage/ContactUsMap.vue";
 import ProductUserComment from "@/components/pages/ProductPage1/ProductUserComment.vue";
 import ProductCommentWrite from "@/components/pages/ProductPage1/ProductCommentWrite.vue";
 import AddToCardComponent from "@/components/pages/ProductPage1/AddToCardComponent.vue";
+import MyAccount from "@/components/pages/MyAccount.vue";
 
 
 const router = createRouter({
@@ -165,6 +166,11 @@ const router = createRouter({
       path: '/add-to-card',
       name:'addToCard',
       component: AddToCardComponent
+    },
+    {
+      path: '/my-account',
+      name:'my-account',
+      component: MyAccount
     }
   ]
 })

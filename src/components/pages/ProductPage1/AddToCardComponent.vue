@@ -45,11 +45,15 @@
                           <div style="width: 80px;">
                             <h5 class="mb-0">${{product.price}}</h5>
                           </div>
+                          <div>
+                            <button class="btn btn-trash" @click="trash(product.id)"><i class="bi bi-trash3"></i></button>
+                          </div>
                           <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <button class="btn btn-danger mb-2" @click="clearAll">Clear All</button>
 
 
 
@@ -94,7 +98,7 @@
                         </div>
 
                         <div class="row mb-4">
-                          <div class="col-md-6">
+                          <div class="col-md-6">cd
                             <div data-mdb-input-init class="form-outline form-white">
                               <input type="text" id="typeExp" class="form-control form-control-lg"
                                      placeholder="Katartal"  v-model="street" />
@@ -154,15 +158,25 @@
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import {ref, onMounted} from "vue";
 import axios from "axios";
-
+import {showToast, errorToast} from "@/components/pages/ToastifySuccess.js";
 const region = ref('')
 const district = ref('')
 const street = ref('')
 const home = ref('')
 const yourToken = '1|5lo6yKLJYTgxNs2SJs66LNRXSTuwQMIhYeBtcgJlafec3d35'
 
+const clearAll = function (){
+  localStorage.clear();
+}
+const trash = function(productId) {
+  cart.value = cart.value.filter(product => product.id !== productId);
+  localStorage.setItem('cart', JSON.stringify(cart.value));
+};
 
 const checkout = function (){
+ let card = JSON.parse(localStorage.getItem('card')) || [];
+  card.push(cart.value);
+  localStorage.setItem('card', JSON.stringify(card));
   axios({
     method: 'POST',
     url: 'http://127.0.0.1:8000/api/orders',
@@ -187,10 +201,10 @@ const checkout = function (){
     }
   }).then((response) => {
     console.log(response.data.message)
-    alert('Muvaffaqqiyatli savdo qildingiz')
+    showToast()
   }).catch((error)=>{
     console.log(error.response.data.message)
-    alert('ketmadi')
+    errorToast()
   })
 }
 
@@ -205,6 +219,10 @@ const checkout = function (){
 </script>
 
 <style scoped>
+.btn-trash:hover{
+  background-color: #dc3545;
+  color: white;
+}
 @media (min-width: 1025px) {
   .h-custom {
     height: 100vh !important;

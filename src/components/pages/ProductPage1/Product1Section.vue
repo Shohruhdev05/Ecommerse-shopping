@@ -99,6 +99,8 @@
 
 </template>
 <script setup>
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import axios from "axios";
@@ -142,9 +144,26 @@ const addToCard = function (product){
       'Authorization': `Bearer ${yourToken}`
     }
   }).then((response) => {
-    alert('Muvaffaqqiyatli yuborildi')
+    Toastify({
+      text: "Mahsulot qabul qilindi",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "right",
+      backgroundColor: "#28a745",
+      stopOnFocus: true,
+    }).showToast();
   }).catch((error) => {
-    alert(error.response.data.message)
+    console.log(error.response.data.message)
+    Toastify({
+      text: "Qabul qilinmadi",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "right",
+      backgroundColor: "#dc3545",
+      stopOnFocus: true,
+    }).showToast();
   })
 }
 
@@ -166,7 +185,15 @@ const wishlist = function (product){
     }).then((res) => {
       console.log(res)
       isWishlistAdded.value = true
-      alert('Sevimlilarga qo\'shildi❤')
+      Toastify({
+        text: "Sevimlilarga qo\'shildi❤",
+        duration: 3000,  // Toast qanchalik uzoq turishi
+        close: true,     // Yopish tugmasi
+        gravity: "top",  // Toastning pozitsiyasi (top or bottom)
+        position: "right", // Toastning ekrandagi joyi
+        backgroundColor: "#28a745",  // Success rang
+        stopOnFocus: true,  // Foydalanuvchi ustiga bossa, toastingni to'xtatish
+      }).showToast();
     }).catch((error) => {
       console.log(error)
     })
